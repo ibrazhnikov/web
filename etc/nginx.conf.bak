@@ -1,0 +1,30 @@
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	server_name localhost;
+
+	location / {
+	root		/home/box/web/public/123;
+	access_log	/home/box/web/;
+	}
+
+	location /uploads/ {
+	root	/home/box/web/public/uploads;
+	access_log	/home/box/web/;
+	}
+	location ~* ^.+\.(jpg|jpeg|gif|png)$ {
+	root	/home/box/web/public/img;
+	access_log	/home/box/web/;
+	}
+	location ~* ^.+\.(css)$ {
+	root	/home/box/web/public/css;
+	access_log	/home/box/web/;
+	}
+	location ~* ^.+\.(js)$ {
+	root	/home/box/web/public/js;
+	access_log	/home/box/web/;
+	}
+
+
+}
+
